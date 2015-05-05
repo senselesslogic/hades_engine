@@ -2,6 +2,8 @@ library hades_engine.canvas;
 
 import 'dart:html';
 import 'package:hades_engine/circle.dart';
+import 'package:hades_engine/point2d.dart';
+import 'dart:async';
 
 class Canvas
 {
@@ -64,5 +66,19 @@ class Canvas
   
   int getNumberOfCircles() {
     return circles.length;
+  }
+  
+  void animate(num _) {
+    this.move();
+    this.clear();
+    this.draw();
+    window.requestAnimationFrame(this.animate);
+  }
+
+  void move() {
+    for (int i = 0; i < this.circles.length; i++)
+    {
+      this.circles[i].move(0.1);
+    }
   }
 }

@@ -31,6 +31,9 @@ void main()
     
     setUp(() { canvas.getCircle(0).position = new Point2D(10, 10); });
     test("Test the position of circle at index 0 is at (10, 10)", () => expect(canvas.getCircle(0).position, new Point2D(10, 10)));
+    
+    setUp(() { canvas.getCircle(0).position += new Point2D(0,10); });
+    test("Test circle transition from (10, 10) to (10, 20)", () => expect(canvas.getCircle(0).position, new Point2D(10,20)));
   });
 }
 

@@ -22,4 +22,13 @@ class Point2D
   {
     return this.x == otherPoint.x && this.y == otherPoint.y;
   }
+  
+  operator +(Point2D otherPoint)
+  {
+    return new Point2D(this.x + otherPoint.x, this.y + otherPoint.y);
+  }
+  
+  operator *(num scalar) {
+    return new Point2D(this.x * scalar, this.y * scalar);
+  }
 }
